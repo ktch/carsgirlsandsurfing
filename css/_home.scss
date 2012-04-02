@@ -1,0 +1,110 @@
+$purple:#796b7d;
+$deep-purple:#45334a;
+$pink:#ffa3a3;
+
+html {
+	background:url('sand.jpg') repeat;
+	padding: 23px;
+	overflow-x: hidden; /* For Opera */
+	-webkit-box-shadow:
+		inset $pink 0 0 0 5px,
+		inset $deep-purple 0 0 0 6px,
+		inset $purple 0 0 0 10px,
+		inset $pink 0 0 0 11px,
+		inset $deep-purple 0 0 0 16px;
+	-moz-box-shadow:
+		inset $pink 0 0 0 5px,
+		inset $deep-purple 0 0 0 6px,
+		inset $purple 0 0 0 10px,
+		inset $pink 0 0 0 11px,
+		inset $deep-purple 0 0 0 16px;
+	box-shadow:
+		inset $pink 0 0 0 5px,
+		inset $deep-purple 0 0 0 6px,
+		inset $purple 0 0 0 10px,
+		inset $pink 0 0 0 11px,
+		inset $deep-purple 0 0 0 16px;
+}
+
+a {
+	text-decoration:none;
+	font-weight:600;
+	color:$deep-purple;
+	&:hover {
+		text-decoration:underline;
+	}
+	&:active {
+		background:$pink;
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	color:$deep-purple;
+	text-shadow: 0px 2px 2px #fff;
+	font-weight:700;
+}
+
+nav {
+	float:left;
+	width:100%;
+	@media screen and (min-width:481px) {
+		width:160px;
+		position:fixed;
+	}
+	img {
+		float:left;
+		width:140px;
+		padding-right:7px;
+		@media screen and (min-width:481px) {
+			padding-right:0;
+			float:none;
+		}	
+	}
+	ul {
+		position:absolute;
+		right:35px;
+		margin-top:5px;
+		@media screen and (min-width:481px) {
+			float:none;
+			padding-left:0px;
+			margin:25px 0 0 0;
+		}
+		li {
+			text-align:right;
+			font-size:16px;
+			color:$deep-purple;
+			text-shadow: 0px 2px 2px #fff;
+			font-weight:700;
+			list-style:none;
+			margin:5px 0;
+			span {
+				font-weight:100;
+				display:none;
+				@media screen and (min-width:481px) {
+					display:inline;
+				}
+			}
+			@media screen and (min-width:481px) {
+				font-size:18px;
+				text-align:left;
+			}
+		}
+	}
+}
+
+section#main	{
+	width:100%;
+	float:left;
+	padding:20px 0 0 0;
+	@media screen and (min-width:481px) {
+		width:77%;
+		padding:0 0 0 140px;
+	}
+}
+
+div.wrapper {
+	padding:0 1px 0 0;
+	@media screen and (min-width:481px) {
+		padding:0px 30px;
+	}
+}
