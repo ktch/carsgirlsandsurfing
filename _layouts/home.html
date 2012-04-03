@@ -3,3 +3,36 @@ layout: default
 ---
 
 {{ content }}
+
+<section class="listing meditation">
+	<h2><a href="meditating">Who is Meditating?</a></h2>
+	<p class="show_description">A show about spirituality, meditation, and real-world problems from a Buddhist perspective.</p>
+	<ul>
+		{% for post in site.categories.meditating limit:5 %}	
+		<li>Episode {{ post.number }} - {{ post.title }}</li>
+		{% endfor %}	
+	</ul>
+	<p><a href="meditating">More shows→</a></p>
+</section>
+
+<section class="listing farming">
+	<h2><a href="farming">Farming on the Brink</a></h2>
+	<p class="show_description">A show about farming.</p>
+	<ul>
+		{% for post in site.categories.farming limit:5 %}	
+		<li>Episode {{ post.number }} - {{ post.title }}</li>
+		{% endfor %}	
+	</ul>
+	<p><a href="farming">More shows→</a></p>
+</section>
+
+<section class="listing wrong">
+	<h2><a href="wrong">Am I Wrong?</a></h2>
+	<p class="show_description">A show discussing things we love, and things we think are inherently flawed. We have differing opinions and nothing is out of bounds.</p>
+	<ul>
+		{% for post in site.categories.wrong limit:5 %}	
+		<li>Episode {{ post.number }} - {{ post.title }}</li>
+		{% endfor %}	
+	</ul>
+	<p><a href="wrong">More shows→</a></p>
+</section>

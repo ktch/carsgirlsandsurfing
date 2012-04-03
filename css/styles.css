@@ -1,5 +1,5 @@
 html {
-  background: url("sand.jpg") repeat;
+  background: #fff7ee;
   padding: 23px;
   overflow-x: hidden;
   /* For Opera */
@@ -78,3 +78,17 @@ div.wrapper {
   @media screen and (min-width:481px) {
     div.wrapper {
       padding: 0px 30px; } }
+
+section.listing {
+  float: left;
+  background: #fff;
+  padding: 10px;
+  margin: 5px 10px 5px 0px;
+  width: 280px;
+  height: 400px;
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25); }
