@@ -72,6 +72,9 @@ section#main {
     section#main {
       width: 77%;
       padding: 0 0 0 140px; } }
+  @media screen and (min-width:801px) {
+    section#main {
+      width: 85%; } }
 
 div.wrapper {
   padding: 0 1px 0 0; }
@@ -80,15 +83,52 @@ div.wrapper {
       padding: 0px 30px; } }
 
 section.listing {
+  position: relative;
   float: left;
   background: #fff;
   padding: 10px;
-  margin: 5px 10px 5px 0px;
-  width: 280px;
-  height: 400px;
+  margin: 5px 0;
+  width: 93%;
+  height: 300px;
   -webkit-border-radius: 6px 6px 6px 6px;
   -moz-border-radius: 6px 6px 6px 6px;
   border-radius: 6px 6px 6px 6px;
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25); }
+  section.listing ul {
+    padding-left: 0px; }
+  section.listing ul li {
+    list-style: none;
+    padding: 0 0 2px 0;
+    font-size: 14px; }
+  section.listing ul li a {
+    font-weight: 400; }
+  section.listing h4 {
+    color: #796b7d;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: -5px; }
+  section.listing p.hosts {
+    font-size: 13px;
+    font-weight: 600; }
+    section.listing p.hosts:before {
+      content: 'with '; }
+  section.listing p.show_description {
+    font-size: 13px;
+    font-style: italic;
+    margin-top: -20px; }
+  section.listing p.more {
+    position: absolute;
+    text-transform: lowercase;
+    font-style: italic;
+    font-size: 12px;
+    bottom: 0px;
+    right: 10px; }
+  section.listing img {
+    width: 100%;
+    margin-top: -15px; }
+  @media screen and (min-width:481px) {
+    section.listing {
+      width: 280px;
+      margin: 5px 10px 5px 0px; } }
