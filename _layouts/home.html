@@ -34,7 +34,7 @@ layout: default
 <section class="listing wrong">
 	<h2><a href="/wrong"><img src="/img/am-i-wrong.png" alt="Am I Wrong?"></a></h2>
 	<p class="show_description">A show discussing things we love, and things we think are flawed. We have differing opinions and nothing is out of bounds.</p>
-	<p class="hosts">Mike Force, Zach Phillips</p>
+	<p class="hosts">Mike Force and Zach Phillips</p>
 	<ul>
 		{% for post in site.categories.wrong limit:5 %}	
 		<li><a href="{{ post.url }}">Episode {{ post.number }} - {{ post.title }}</a></li>

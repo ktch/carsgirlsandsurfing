@@ -2,4 +2,49 @@
 layout: default
 ---
 
+<div id="turntable">
+	<div id="wheel"></div>
+	<div id="needle"></div>
+</div>
+
+<audio src="/files/{{ page.file }}" controls preload="auto" autobuffer id="philco"></audio>
+
+<h3>Show Notes</h3>
+
 {{ content }}
+
+<script type="text/javascript" charset="utf-8">
+	function timeFix() {
+		var t = setTimeout('recordPlay()',1000);				
+	}
+
+	function recordPlay() {
+		document.getElementById('philco').play();	
+	}	
+
+	$(function(){
+
+		$('#turntable').click(function(){
+
+			if ( $(this).hasClass('on') ) {
+
+
+				if ( $(this).hasClass('paused') ) {
+					$(this).removeClass('paused').addClass('playing');
+					timeFix();
+					console.log('playing again');
+				} else {
+					$(this).removeClass('playing').addClass('paused');						
+					document.getElementById('philco').pause();												
+				}
+
+			} else {
+				document.getElementById('philco').play();	
+				console.log('first play');
+				$(this).addClass('on');
+			}
+
+		});		
+
+	});
+</script>
