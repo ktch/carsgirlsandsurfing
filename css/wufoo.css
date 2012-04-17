@@ -1,1 +1,8 @@
-.wufoo .info{display:none}
+.wufoo .info {
+	display:none
+}
+
+* {
+	padding-left:0;
+	padding-right:0;
+}

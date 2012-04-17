@@ -4,7 +4,7 @@ layout: default
 
 <div id="turntable">
 	<div id="wheel">
-		<p class="album_artist">Who Is Meditating?</p>
+		<p class="album_artist">{{ page.show }}</p>
 		<p class="album_track">{{ page.number }} - {{ page.title }}</p>
 	</div>
 	<div id="needle"></div>
@@ -18,9 +18,17 @@ layout: default
 
 <audio src="/files/{{ page.file }}" controls preload="auto" autobuffer id="currentshow"></audio>
 
-<h3>Show Notes</h3>
+
+<p><em>Episode {{ page.number }} - {{ page.title }}</em></p>
+
+<h3>Show Notes:</h3>
 
 {{ content }}
+
+<h3>Follow Up:</h3>
+
+{% include followup.html %}
+
 
 <script type="text/javascript" charset="utf-8">
 	function timeFix() {
@@ -59,6 +67,20 @@ layout: default
           }
       }
   }
+
+	function restartAudio() {
+	  // Check for audio element support.
+      if (window.HTMLAudioElement) {
+          try {
+              var oAudio = document.getElementById('myaudio');
+              oAudio.currentTime = 0;
+          }
+          catch (e) {
+              // Fail silently but show in F12 developer tools console
+               if(window.console && console.error("Error:" + e));
+         }
+      }
+	}
 
 	$(function(){
 
@@ -101,5 +123,3 @@ layout: default
 
 	});
 </script>
-
-{% include followup.html %}

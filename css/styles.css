@@ -7,6 +7,18 @@ html {
   -moz-box-shadow: inset #ffa3a3 0 0 0 5px, inset #45334a 0 0 0 6px, inset #796b7d 0 0 0 10px, inset #ffa3a3 0 0 0 11px, inset #45334a 0 0 0 16px;
   box-shadow: inset #ffa3a3 0 0 0 5px, inset #45334a 0 0 0 6px, inset #796b7d 0 0 0 10px, inset #ffa3a3 0 0 0 11px, inset #45334a 0 0 0 16px; }
 
+p {
+  font-size: 14px;
+  color: #45334a; }
+
+h3 {
+  font-size: 17px;
+  color: #45334a; }
+
+li {
+  font-size: 14px;
+  color: #45334a; }
+
 a {
   text-decoration: none;
   font-weight: 600;
