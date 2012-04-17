@@ -2,12 +2,54 @@ audio, audio:active { outline: none; }
 audio {
 	visibility: hidden;	
 	opacity:0;
+	height:0px;
+}
+
+ul {
+	padding-left:0;
+	list-style:none;
+}
+
+ul#controls {
+	li {
+		display:inline-block;
+		padding:10px;
+		margin-left:10px;
+		text-align:center;
+		width:60px;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+		&:hover {
+			background:$pink;
+		}
+	}
+}
+
+p.album_artist {
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	width:50%;
+	text-align:center;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:10px;
+	margin:30% auto 0 auto;
+}
+
+p.album_track {
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	width:50%;
+	color:#fff;
+	text-align:center;
+	font-size:9px;
+	margin:15% auto;
 }
 
 #turntable {
+	background-size: 290px 236px;
 	background-image: url('base.png');
 	overflow: hidden;
-	margin-left:-20px;
+	margin-left:0px;
 	width: 290px;
 	height: 236px;
 	position: relative;
@@ -44,6 +86,7 @@ audio {
 	}
 
 #wheel {
+	background-size: 189px 189px;
 	background-image: url('wheel.png');
 	overflow: hidden;
 	position: absolute;
@@ -124,6 +167,7 @@ audio {
     }              
     
 #needle {
+	background-size: 32px 142px;
 	background-image: url('needle.png');
 	overflow: hidden;
 	position: absolute;
@@ -140,16 +184,16 @@ audio {
 
 	#turntable.on #needle {
 		-o-animation: play 1s linear;
-		-o-transform-origin: 15px 2px;
+		-o-transform-origin: 15px 15px;
 	    -o-animation-fill-mode: forwards;	
 		-moz-animation: play 1s linear;	    
-		-moz-transform-origin: 15px 2px;
+		-moz-transform-origin: 15px 15px;
 	    -moz-animation-fill-mode: forwards;
 		-webkit-animation: play 1s linear;	    
-		-webkit-transform-origin: 15px 2px;
+		-webkit-transform-origin: 15px 15px;
 	    -webkit-animation-fill-mode: forwards;	
 		-ms-animation: play 1s linear;	    
-		-ms-transform-origin: 15px 2px;
+		-ms-transform-origin: 15px 15px;
 	    -moz-animation-fill-mode: forwards;
 	}
 	

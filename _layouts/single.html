@@ -3,11 +3,20 @@ layout: default
 ---
 
 <div id="turntable">
-	<div id="wheel"></div>
+	<div id="wheel">
+		<p class="album_artist">Who Is Meditating?</p>
+		<p class="album_track">{{ page.number }} - {{ page.title }}</p>
+	</div>
 	<div id="needle"></div>
 </div>
 
-<audio src="/files/{{ page.file }}" controls preload="auto" autobuffer id="philco"></audio>
+<ul id="controls">
+	<a id="rewind" href="#"><li>Back</li></a>
+	<a id="play" href="#"><li>Play</li></a>
+	<a id="fastforward" href="#"><li>Skip</li></a>
+</ul>
+
+<audio src="/files/{{ page.file }}" controls preload="auto" autobuffer id="currentshow"></audio>
 
 <h3>Show Notes</h3>
 
@@ -19,32 +28,78 @@ layout: default
 	}
 
 	function recordPlay() {
-		document.getElementById('philco').play();	
-	}	
+		document.getElementById('currentshow').play();	
+	}
+	
+	function rewindAudio() {
+	    // Check for audio element support.
+       if (window.HTMLAudioElement) {
+           try {
+               var oAudio = document.getElementById('currentshow');
+               oAudio.currentTime -= 30.0;
+           }
+           catch (e) {
+               // Fail silently but show in F12 developer tools console
+                if(window.console && console.error("Error:" + e));
+           }
+       }
+   }
+
+	function forwardAudio() {
+
+	  // Check for audio element support.
+      if (window.HTMLAudioElement) {
+          try {
+              var oAudio = document.getElementById('currentshow');
+              oAudio.currentTime += 30.0;
+          }
+          catch (e) {
+              // Fail silently but show in F12 developer tools console
+               if(window.console && console.error("Error:" + e));
+          }
+      }
+  }
 
 	$(function(){
 
-		$('#turntable').click(function(){
+		$('#rewind').click(function(){
+			rewindAudio();
+		});
+		
+		$('#fastforward').click(function(){
+			forwardAudio();
+		});		
 
-			if ( $(this).hasClass('on') ) {
+	});
+
+	$(function(){
+
+		$('#play').click(function(){
+
+			if ( $('#turntable').hasClass('on') ) {
 
 
-				if ( $(this).hasClass('paused') ) {
-					$(this).removeClass('paused').addClass('playing');
+				if ( $('#turntable').hasClass('paused') ) {
+					$('#turntable').removeClass('paused').addClass('playing');
 					timeFix();
 					console.log('playing again');
+					$(this).html('<li>Pause</li>');
 				} else {
-					$(this).removeClass('playing').addClass('paused');						
-					document.getElementById('philco').pause();												
+					$('#turntable').removeClass('playing').addClass('paused');						
+					document.getElementById('currentshow').pause();
+					$(this).html('<li>Play</li>');										
 				}
 
 			} else {
-				document.getElementById('philco').play();	
+				document.getElementById('currentshow').play();	
 				console.log('first play');
-				$(this).addClass('on');
+				$('#turntable').addClass('on');
+				$(this).html('<li>Pause</li>');
 			}
 
 		});		
 
 	});
 </script>
+
+{% include followup.html %}
