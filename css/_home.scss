@@ -199,9 +199,23 @@ section.listing {
 	}
 }
 
+footer {
+	width:300px;
+	margin:0 auto;
+	p {
+		width:170px;
+		float:left;
+	}
+	img {
+		float:left;
+		width:100px;
+		margin-top:-52px;
+		padding:20px 0;
+	} 
+}
+
 iframe {
 	margin-left:-3px;
-	max-width:400px;
 }
 
 iframe.freenode {
