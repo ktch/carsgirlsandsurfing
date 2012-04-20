@@ -7,6 +7,7 @@
 	padding-right:0;
 }
 
-textarea {
-	width:250px;
+textarea.textarea {
+	min-width:150px;
+	max-width:260px;
 }

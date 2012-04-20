@@ -3,4 +3,4 @@ layout: blog
 title: The Cars, Girls, and Surfing Blog
 ---
 
-<h2>Not Much Here</h2>
+##We're Glad You're Here

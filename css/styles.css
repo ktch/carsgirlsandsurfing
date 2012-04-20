@@ -155,20 +155,26 @@ section.listing {
       margin: 5px 10px 5px 0px; } }
 
 footer {
-  width: 300px;
-  margin: 0 auto; }
+  position: relative;
+  height: 100px;
+  width: 100%;
+  margin-top: 50px; }
   footer p {
-    width: 170px;
-    float: left; }
+    font-size: 12px;
+    position: absolute;
+    display: block;
+    right: 105px;
+    bottom: 38px; }
   footer img {
-    float: left;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    display: block;
     width: 90px;
-    margin-top: -52px;
-    padding: 20px 0; }
+    margin-top: -30px; }
 
 iframe {
-  margin-left: -3px;
-  width: 250px; }
+  margin-left: -1%; }
 
 iframe.freenode {
   max-width: 100%; }
@@ -189,13 +195,16 @@ ul#controls li {
   display: inline-block;
   padding: 8px;
   font-weight: 600;
-  margin-left: 10px;
+  margin-left: 3px;
   text-align: center;
   width: 60px;
   border: 2px solid #796b7d;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px; }
+  @media screen and (min-width:481px) {
+    ul#controls li {
+      margin-left: 6px; } }
   ul#controls li:hover {
     background: #939598;
     color: #fff; }
@@ -235,7 +244,7 @@ p.album_track {
   background-size: 290px 236px;
   background-image: url("base.png");
   overflow: hidden;
-  margin-left: -15px;
+  margin-left: -18px;
   width: 290px;
   height: 236px;
   position: relative;
