@@ -162,12 +162,13 @@ footer {
     float: left; }
   footer img {
     float: left;
-    width: 100px;
+    width: 90px;
     margin-top: -52px;
     padding: 20px 0; }
 
 iframe {
-  margin-left: -3px; }
+  margin-left: -3px;
+  width: 250px; }
 
 iframe.freenode {
   max-width: 100%; }
