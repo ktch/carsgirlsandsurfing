@@ -1,5 +1,6 @@
 ---
 layout: rss-feed
+feed: chimes
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:atom="http://www.w3.org/2005/Atom/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
@@ -18,52 +19,54 @@ layout: rss-feed
 		<itunes:summary>
 			<!-- Short description -->
 		</itunes:summary>
-		<itunes:image href="http://icebox.5by5.tv/images/broadcasts/19/cover.jpg"/>
+		<itunes:image href="http://shows.carsgirlsandsurfing.com/covers/master.jpg"/>
 		<itunes:keywords>
-			productivity, communication, work, barriers, constraints, tools
+			<!-- Some Keywords -->
 		</itunes:keywords>
-		<itunes:explicit>no</itunes:explicit>
+		<itunes:explicit>yes</itunes:explicit>
 		<itunes:owner>
 			<itunes:name>Cars, Girls, and Surfing</itunes:name>
-			<itunes:email>boss@carsgirlsandsurfing.co</itunes:email>
+			<itunes:email>deuce@carsgirlsandsurfing.co</itunes:email>
 		</itunes:owner>
 		<itunes:category text="Technology">
 		<itunes:category text="Software How-To"/>
 		<itunes:category text="Tech News"/>
 		</itunes:category>
-		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/back2work"/>
-		<feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="back2work"/>
+		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/carsgirlsandsurfing"/>
+		<feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="carsgirlsandsurfing"/>
 		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
 		<media:thumbnail url="http://icebox.5by5.tv/images/broadcasts/19/cover.jpg"/>
 		<media:keywords>
 			productivity, communication, work, barriers, constraints, tools
 		</media:keywords>
 		<media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology/Software How-To</media:category>
+		{% for show in site.posts %}
 		<item>
-			<title>Back to Work 60: Living Inside an Unfinished Thing</title>
-			<link>http://5by5.tv/b2w/60</link>
-			<guid>http://5by5.tv/b2w/60</guid>
-			<pubDate>Mon, 26 Mar 2012 20:30:00 GMT</pubDate>
-			<author><!-- Hosts Names --></author>
+			<title>{{ show.show }} {{ show.number }} - {{ show.title }}</title>
+			<link>{{ site.url }}{{ show.url }}</link>
+			<guid>{{ site.url }}{{ show.url }}</guid>
+			<pubDate>{{ show.date }}</pubDate>
+			<author>carsgirlsandsurfing.com</author>
 			<description>
-				<!-- Show Description -->
+				{{ show.description }}
 			</description>
-			<enclosure url="http://media.5by5.tv/audio/broadcasts/b2w/2012/b2w-060.mp3" length="34261120" type="audio/mpeg"/>
+			<enclosure url="http://shows.carsgirlsandsurfing.com/{{ show.file }}" length="34261120" type="audio/mpeg"/>
 			<content:encoded>
-				<!-- Show notes -->
+				{{ show.content }}
 			</content:encoded>
-			<itunes:author><!-- Hosts Names --></itunes:author>
+			<itunes:author>{{ show.hosts }}</itunes:author>
 			<itunes:duration>1:10:30</itunes:duration>
-			<itunes:subtitle>TOPIC: Learning to treat your work as a platform.</itunes:subtitle>
+			<itunes:subtitle>{{ show.subtitle }}</itunes:subtitle>
 			<itunes:summary>
 				<!-- Show Description -->
 			</itunes:summary>
 			<itunes:keywords>
-				productivity, communication, work, barriers, constraints, tools
+				{{ show.keywords }}
 			</itunes:keywords>
-			<itunes:image href="http://carsgirlsandsurfing.com/mastercover.jpg"/>
-			<media:content url="http://media.5by5.tv/audio/broadcasts/b2w/2012/b2w-060.mp3" fileSize="34261120" type="audio/mpeg"/>
+			<itunes:image href="http://shows.carsgirlsandsurfing.com/covers/master.jpg"/>
+			<media:content url="http://shows.carsgirlsandsurfing.com/{{ show.file }}" fileSize="34261120" type="audio/mpeg"/>
 			<itunes:explicit>no</itunes:explicit>
 		</item>
+		{% endfor %}
 	</channel>
 </rss>

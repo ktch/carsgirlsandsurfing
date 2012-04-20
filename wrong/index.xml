@@ -1,5 +1,6 @@
 ---
 layout: rss-feed
+feed: wrong
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:atom="http://www.w3.org/2005/Atom/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
@@ -8,39 +9,38 @@ layout: rss-feed
 		<link>http://carsgirlsandsurfing.com</link>
 		<pubDate>Mon, 26 Mar 2012 20:30:00 GMT</pubDate>
 		<description>
-			This is the master feed of the Cars, Girls, and Surfing syndicate. All of the totally unrelated shows, together. No video.
+			<!-- Short description -->
 		</description>
 		<language>en-us</language>
 		<itunes:subtitle>
-			This is the master feed of the Cars, Girls, and Surfing syndicate. All of the totally unrelated shows, together.
+			<!-- Short description -->
 		</itunes:subtitle>
 		<itunes:author>Cars, Girls, and Surfing</itunes:author>
 		<itunes:summary>
-			This is the master feed of the Cars, Girls, and Surfing syndicate. All of the totally unrelated shows, together.
+			<!-- Short description -->
 		</itunes:summary>
 		<itunes:image href="http://shows.carsgirlsandsurfing.com/covers/master.jpg"/>
 		<itunes:keywords>
-			carsgirlssurfing, surfingcarsandgirls, girlscarsandsurfing, cars, girls, surfing
+			<!-- Some Keywords -->
 		</itunes:keywords>
-		<itunes:explicit>no</itunes:explicit>
+		<itunes:explicit>yes</itunes:explicit>
 		<itunes:owner>
 			<itunes:name>Cars, Girls, and Surfing</itunes:name>
 			<itunes:email>deuce@carsgirlsandsurfing.co</itunes:email>
 		</itunes:owner>
-		<itunes:category text="Spirituality">
-		<itunes:category text="Gadgets"/>
-		<itunes:category text="Comedy"/>
+		<itunes:category text="Technology">
+		<itunes:category text="Software How-To"/>
+		<itunes:category text="Tech News"/>
 		</itunes:category>
 		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/carsgirlsandsurfing"/>
 		<feedburner:info xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" uri="carsgirlsandsurfing"/>
 		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
-		<media:thumbnail url="http://shows.carsgirlsandsurfing.com/covers/master.jpg"/>
+		<media:thumbnail url="http://icebox.5by5.tv/images/broadcasts/19/cover.jpg"/>
 		<media:keywords>
-			carsgirlssurfing, surfingcarsandgirls, girlscarsandsurfing, cars, girls, surfing
+			productivity, communication, work, barriers, constraints, tools
 		</media:keywords>
-		<media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Comedy</media:category>
+		<media:category scheme="http://www.itunes.com/dtds/podcast-1.0.dtd">Technology/Software How-To</media:category>
 		{% for show in site.posts %}
-		{% unless show.layout == "post" || show.layout == "video" %}
 		<item>
 			<title>{{ show.show }} {{ show.number }} - {{ show.title }}</title>
 			<link>{{ site.url }}{{ show.url }}</link>
@@ -55,10 +55,10 @@ layout: rss-feed
 				{{ show.content }}
 			</content:encoded>
 			<itunes:author>{{ show.hosts }}</itunes:author>
-			<itunes:duration>{{ show.duration }}</itunes:duration>
+			<itunes:duration>1:10:30</itunes:duration>
 			<itunes:subtitle>{{ show.subtitle }}</itunes:subtitle>
 			<itunes:summary>
-				{{ show.description }}
+				<!-- Show Description -->
 			</itunes:summary>
 			<itunes:keywords>
 				{{ show.keywords }}
@@ -67,7 +67,6 @@ layout: rss-feed
 			<media:content url="http://shows.carsgirlsandsurfing.com/{{ show.file }}" fileSize="34261120" type="audio/mpeg"/>
 			<itunes:explicit>no</itunes:explicit>
 		</item>
-		{% endunless %}
 		{% endfor %}
 	</channel>
 </rss>

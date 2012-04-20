@@ -2,18 +2,15 @@
 layout: default
 ---
 
-{{ content }}
-
-<h2>Our Shows</h2>
+<h2>Our Shows:</h2>
 
 <section class="listing meditation">
 	<h2><a href="/meditating"><img src="/img/who-is-meditating.png" alt="Who is Meditating?"></a></h2>
 	<p class="show_description">A show about spirituality, meditation, and real-world problems from a Buddhist perspective.</p>
 	<p class="hosts">Joel Baehr</p>
-	<h4>Episodes</h4>
 	<ul>
 		{% for post in site.categories.meditating limit:5 %}	
-		<li><a href="{{ post.url }}">{{ post.number }} - {{ post.title }}</a></li>
+		<li><a href="{{ post.url }}">Ep. {{ post.number }} - {{ post.title }}</a></li>
 		{% endfor %}	
 	</ul>
 	<p class="more"><a href="/meditating">earlier shows→</a></p>
@@ -65,4 +62,28 @@ layout: default
 		{% endfor %}	
 	</ul>
 	<p class="more"><a href="/shot">earlier shows→</a></p>
+</section>
+
+<section id="homecontent">
+
+{{ content }}
+
+<div id="wufoo-r7x2x3">
+Fill out my <a href="http://ktch.wufoo.com/forms/r7x2x3">online form</a>.
+</div>
+<script type="text/javascript">var r7x2x3;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'ktch', 
+'formHash':'r7x2x3', 
+'autoResize':true,
+'height':'870',
+'async':true,
+'header':'show'};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { r7x2x3 = new WufooForm();r7x2x3.initialize(options);r7x2x3.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
+
 </section>

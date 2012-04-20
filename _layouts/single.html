@@ -18,14 +18,28 @@ layout: default
 
 <audio src="/files/{{ page.file }}" controls preload="auto" autobuffer id="currentshow"></audio>
 
+<h2 class="showtitle">
+{% case page.show %}
+{% when 'Who is Meditating?' %}
+<img src="/img/who-is-meditating.png" alt="Who is Meditating?" class="showimage">
+{% when 'Farming on the Brink' %}
+<img src="/img/farming.png" alt="Farming"><img src="/img/on-the-brink.png" alt="on the Brink">
+{% else %}
+... else ...
+{% endcase %}
+</h2>
 
-<p><em>Episode {{ page.number }} - {{ page.title }}</em></p>
+<p class="episode"><em>Episode {{ page.number }} - {{ page.title }}</em></p>
 
-<h3>Show Notes:</h3>
+<p class="showdescription">{{ page.description }}</p>
+
+<h3>Show Notes and Links:</h3>
 
 {{ content }}
 
 <h3>Follow Up:</h3>
+
+<p>Send us your thoughts, questions, and comments.</p>
 
 {% include followup.html %}
 

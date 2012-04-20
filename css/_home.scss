@@ -3,6 +3,7 @@ $deep-purple:#45334a;
 $pink:#ffa3a3;
 
 html {
+	min-height:96%;
 	background:#fff7ee;
 	padding: 23px;
 	overflow-x: hidden; /* For Opera */
@@ -31,29 +32,38 @@ p {
 	color:$deep-purple;
 }
 
+h2 {
+	font-size:35px;
+}
+
 h3 {
 	font-size:17px;
 	color:$deep-purple;
+	margin-top:30px;
 }
 
 li {
 	font-size:14px;
 	color:$deep-purple;
+	font-family: "museo-slab",serif;
 }
 
 a {
 	text-decoration:none;
-	font-weight:600;
 	color:$deep-purple;
 	&:hover {
-		text-decoration:underline;
+		text-shadow: 0px 2px 2px $pink;
 	}
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
 	color:$deep-purple;
-	text-shadow: 0px 2px 2px #fff;
+	text-shadow: 0px 2px 2px $pink;
 	font-weight:700;
+}
+
+h4, h5, h6 {
+	font-family: "museo-slab",serif;
 }
 
 nav {
@@ -82,14 +92,15 @@ nav {
 			margin:25px 0 0 0;
 		}
 		li {
+			font-family:"cooper-black-std", sans-serif;
 			text-align:right;
 			font-size:16px;
-			color:$deep-purple;
-			text-shadow: 0px 2px 2px #fff;
+			color:$purple;
 			font-weight:700;
 			list-style:none;
 			margin:5px 0;
 			span {
+				font-family: "museo-slab",serif;
 				font-weight:100;
 				display:none;
 				@media screen and (min-width:481px) {
@@ -97,7 +108,6 @@ nav {
 				}
 			}
 			@media screen and (min-width:481px) {
-				font-size:18px;
 				text-align:left;
 			}
 		}
@@ -115,6 +125,11 @@ section#main	{
 	@media screen and (min-width:801px) {
 		width:85%;
 	}
+}
+
+section#homecontent {
+	clear:both;
+	padding-top:25px;
 }
 
 div.wrapper {
@@ -182,4 +197,13 @@ section.listing {
 		width:280px;
 		margin:5px 10px 5px 0px;
 	}
+}
+
+iframe {
+	margin-left:-3px;
+	max-width:400px;
+}
+
+iframe.freenode {
+	max-width:100%;
 }
