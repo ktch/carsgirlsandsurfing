@@ -4,7 +4,16 @@ layout: default
 
 <div id="turntable">
 	<div id="wheel">
-		<p class="album_artist">{{ page.show }}</p>
+		<p class="album_artist">
+			{% case page.show %}
+			{% when 'Who is Meditating?' %}
+			Who is Meditating?
+			{% when 'Farming on the Brink' %}
+			Farming<br />on the Brink
+			{% else %}
+			{{ page.show }}
+			{% endcase %}
+		</p>
 		<p class="album_track">{{ page.number }} - {{ page.title }}</p>
 	</div>
 	<div id="needle"></div>
@@ -26,7 +35,7 @@ layout: default
 {% when 'Who is Meditating?' %}
 <img src="/img/who-is-meditating.png" alt="Who is Meditating?" class="showimage">
 {% when 'Farming on the Brink' %}
-<img src="/img/farming.png" alt="Farming"><img src="/img/on-the-brink.png" alt="on the Brink">
+<img src="/img/farming.png" alt="Farming"><br /><img src="/img/on-the-brink.png" alt="on the Brink" width="355">
 {% else %}
 ... else ...
 {% endcase %}
