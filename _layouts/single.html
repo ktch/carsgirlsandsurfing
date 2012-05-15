@@ -16,7 +16,10 @@ layout: default
 	<a id="fastforward" href="#"><li>Skip</li></a>
 </ul>
 
-<audio src="/files/{{ page.file }}" controls preload="auto" autobuffer id="currentshow"></audio>
+<audio controls preload="auto" autobuffer id="currentshow">
+	<source src="http://shows.carsgirlsandsurfing.com/{{ page.categories }}-{{ page.number }}.mp3" type="audio/mp3" />	
+	<source src="http://shows.carsgirlsandsurfing.com/{{ page.categories }}-{{ page.number }}.ogg" type="audio/ogg" />
+</audio>
 
 <h2 class="showtitle">
 {% case page.show %}
